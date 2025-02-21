@@ -1,0 +1,58 @@
+@use "./variables" as *;
+
+// Media Query
+
+// $breakpoint - For this value comes from @include respond('x-small');
+// $breakpoints for this _variables.scss
+
+@mixin respond($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @if $value !=null {
+        @if $breakpoint =='x-small' {
+            @media (max-width: 575px) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint =='small' {
+            @media (min-width: 576px) and (max-width: 767px) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint =='medium' {
+            @media (min-width: 768px) and (max-width: 991px) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint =='large' {
+            @media (min-width: 992px) and (max-width: 1199px) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint =='x-large' {
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint =='xx-large' {
+            @media (min-width: 1400px) {
+                @content;
+            }
+        }
+    }
+
+    @else {
+        @warn "Unknown breakpoint: #{$breakpoint}";
+    }
+}
+
+
+@mixin font-style($font-size, $font-weight) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+}

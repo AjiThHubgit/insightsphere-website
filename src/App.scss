@@ -1,0 +1,133 @@
+@use "./styles/custom.scss" as *;
+@use '~bootstrap/scss/bootstrap';
+@use "./styles/variables" as *;
+@use "./styles/mixin" as *;
+@use "./styles/global.scss" as *;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { font-family: 'Poppins', sans-serif; }
+
+  // @include respond('x-small') { background-color: pink; }
+  // @include respond('small') { background-color: lightgreen; }
+  // @include respond('medium') { background-color: lightyellow; }
+  // @include respond('large') { background-color: orange; }
+  // @include respond('x-large') { background-color: purple; }
+  // @include respond('xx-large') { background-color: blue; }
+
+h1,
+.h1 {
+  @include font-style(48px, 700);
+}
+
+h2,
+.h2 {
+  @include font-style(32px, 500);
+}
+
+h3,
+.h3 {
+  @include font-style(24px, 500);
+}
+
+h4,
+.h4 {
+  @include font-style(20px, 500);
+}
+
+h5,
+.h5 {
+  @include font-style(18px, 500);
+}
+
+h6,
+.h6 {
+  @include font-style(16px, 500);
+}
+
+p,
+.p-regular {
+  @include font-style(18px, 400);
+}
+
+.p-medium {
+  @include font-style(16px, 400);
+}
+
+.p-small {
+  @include font-style(14px, 400);
+}
+
+
+// font styling 
+
+h1, .h1 { @include font-style(48px, 700); }
+h2, .h2 { @include font-style(32px, 500); }
+h3, .h3 { @include font-style(24px, 500); }
+h4, .h4 { @include font-style(20px, 500); }
+h5, .h5 { @include font-style(18px, 500); }
+h6, .h6 { @include font-style(16px, 500); }
+
+p, .p-regular { @include font-style(18px, 400); }
+.p-medium { @include font-style(16px, 400); }
+.p-small { @include font-style(14px, 400); }
+
+// Font Sizes
+
+.fs-14 { font-size: 14px; }
+.fs16 { font-size: 16px; }
+.fs18 { font-size: 18px; }
+.fs20 { font-size: 20px; }
+.fs24 { font-size: 24px; }
+
+
+// Container  
+.cwrapper { 
+  max-width: 1440px; width: 100%; margin: 0 auto; padding: 0 60px; 
+  @include respond('x-small') { padding: 0 20px; } 
+  @include respond('large') { padding: 0 40px; } 
+}
+
+.cfwrapper { width: 100%; }
+
+// Dropdown Styling  
+.tdropdown, .tdropdown.show { 
+  background: transparent !important; outline: none !important; border: none !important; 
+  color: $primary-color !important; box-shadow: none !important; 
+  &:hover, &:active, &:focus-visible { box-shadow: none !important; } 
+  &::after { display: none; } 
+}  
+
+// Button & Input  
+button, input { height: 45px; }
+
+// Section Spacing  
+.smtb-70 { 
+  margin: 70px 0; 
+  @include respond('x-small') { margin: 40px 0; } 
+}  
+
+// Dots Styling  
+.slick-dots { display: flex !important; justify-content: center; padding: 0; list-style: none; margin-top: 10px; }  
+.slick-dots li { margin: 0 5px; }  
+.slick-dots li button { width: 12px; height: 12px; border-radius: 50%; background-color: gray; border: none; cursor: pointer; }  
+.slick-dots li.slick-active button { background-color: blue; }  
+
+// Colors  
+.bg-lb { background-color: $light-blue; }  
+.tags-wrapper { padding: 5px; border-radius: 5px; background-color: #f0f5ff; border: 1px solid #adc6ff; }  
+.card-bs { box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; }  
+.anychart-credits { display: none; }
+
+
+.st-color{ color: $subtitle-color; }
+
+.font400 { font-weight: 400; }
+.font500 { font-weight: 500; }
+.font600 { font-weight: 600; }
+.font700 { font-weight: 700; }

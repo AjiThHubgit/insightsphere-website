@@ -1,0 +1,73 @@
+@use "./variables" as *;
+
+// cb - custom button
+
+.cb.btn-outline-primary {
+    border: 1px solid $primary-color !important;
+    background: transparent !important;
+    color: $primary-color !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+
+    &:hover {
+        color: #fff !important;
+        background-color: $primary-color !important;
+        border: 1px solid $primary-color !important;
+    }
+}
+
+.cb.btn-outline-white {
+    border: 1px solid $white-color !important;
+    background: transparent !important;
+    color: $white-color !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+
+    &:hover {
+        color: $black-color !important;
+        background-color: $white-color !important;
+        border: 1px solid $white-color !important;
+    }
+}
+
+.cb.btn-primary {
+    color: #fff !important;
+    background-color: $primary-color !important;
+    border: 1px solid $primary-color !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+
+    &:hover {
+        border: 1px solid $primary-color !important;
+        background: transparent !important;
+        color: $primary-color !important;
+    }
+}
+
+.cb.btn.btn-primary.hbgb {
+    &:hover {
+        background-color: rgb(7, 71, 166) !important;
+        border-color: rgb(7, 71, 166) !important;
+        color: #fff !important;
+    }
+}
+
+
+.custom-arrow.left,
+.custom-arrow.right {
+    border: 1px solid $primary-color;
+    background-color: #fff;
+    margin-right: 30px;
+
+    svg {
+        color: $primary-color;
+    }
+
+    &:hover {
+        background: darken($primary-color, 10%);
+
+        svg {
+            color: #fff;
+        }
+    }
+}

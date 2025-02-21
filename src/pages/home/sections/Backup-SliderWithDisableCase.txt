@@ -1,0 +1,71 @@
+import React, { useRef, useState } from "react";
+import Slider from "react-slick";
+
+function Service() {
+  const sliderRef = useRef(null);
+  const [disablePrev, setDisablePrev] = useState(true);
+  const [disableNext, setDisableNext] = useState(false);
+
+  const slides = [
+    { id: 1, content: "Slide 1" },
+    { id: 2, content: "Slide 2" },
+    { id: 3, content: "Slide 3" },
+  ];
+
+  const settings = {
+    dots: false, // Disable default dots to manually place them
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: (index) => {
+      setDisablePrev(index === 0);
+      setDisableNext(index === slides.length - 1);
+    },
+  };
+
+  return (
+    <div className="slider-container">
+      <Slider ref={sliderRef} {...settings} className="h2_why_ai_certs_slider">
+        {slides.map((slide) => (
+          <div key={slide.id}>
+            <h3>{slide.content}</h3>
+          </div>
+        ))}
+      </Slider>
+
+      <div className="slider-controls">
+        <button
+          className={`prev-btn ${disablePrev ? "slick-disabled" : ""}`}
+          onClick={() => sliderRef.current?.slickPrev()}
+          disabled={disablePrev}
+        >
+          Prev
+        </button>
+
+        {/* Custom Dots */}
+        <div className="custom-dots">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`dot-btn ${index === sliderRef.current?.innerSlider.state.currentSlide ? "active" : ""}`}
+              onClick={() => sliderRef.current?.slickGoTo(index)}
+            >
+              ●
+            </button>
+          ))}
+        </div>
+
+        <button
+          className={`next-btn ${disableNext ? "slick-disabled" : ""}`}
+          onClick={() => sliderRef.current?.slickNext()}
+          disabled={disableNext}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default Service;
