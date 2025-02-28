@@ -5,17 +5,24 @@ import BrandLogo from "../../images/brand-logo.png"
 
 function Header() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
- 
+
   return (
     <>
-      <header className="header-wrapper"> 
+      <header className="header-wrapper">
         <Navbar expand="lg">
           <div className="cwrapper d-lg-flex align-items-center">
             {/* Mobile Toggle Button */}
-            <Navbar.Toggle
-              className="d-lg-none"
-              onClick={() => setShowOffcanvas(true)}
-            />            
+            <div className="d-flex justify-content-between align-items-center d-lg-none">
+
+              <Navbar.Brand as={Link} to="/">
+                <img src={BrandLogo} alt="Brand Logo" className="mb-logo-img" />
+              </Navbar.Brand>
+
+              <Navbar.Toggle
+                onClick={() => setShowOffcanvas(true)}
+              />
+
+            </div>
 
             {/* Offcanvas Menu for Mobile */}
             <Offcanvas
@@ -25,7 +32,7 @@ function Header() {
               className="d-lg-none"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title><img src={BrandLogo} alt="Brand Logo" style={{width: '300px'}} /></Offcanvas.Title>
+                <Offcanvas.Title><img src={BrandLogo} alt="Brand Logo" className="mb-logo-img" /></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="nav-wrapper flex-column">
@@ -43,7 +50,7 @@ function Header() {
             <Navbar.Collapse id="basic-navbar-nav" className="d-none d-lg-block">
               <Nav className="nav-wrapper">
                 <Navbar.Brand as={Link} to="/">
-                  <img src={BrandLogo} alt="Brand Logo" style={{width: '300px'}} />
+                  <img src={BrandLogo} alt="Brand Logo" className="logo-img" />
                 </Navbar.Brand>
                 <div className="nav-left d-flex align-items-center">
                   <Link to="/" className="nav-link">Home</Link>

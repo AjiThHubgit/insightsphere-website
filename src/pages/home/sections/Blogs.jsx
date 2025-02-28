@@ -116,16 +116,18 @@ function Blogs() {
                       <img src={blog.img} alt="blog image" />
                     </div>
                     <div className="content-wrapper">
-                      <p className="p-small">
-                        <span className="tags-wrapper">{blog.category}</span>
-                      </p>
                       <div>
-                        <h3 className="card-title mb-3">{blog.title}</h3>
-                        <p className="card-description mb-4">{blog.description}</p>
-                        <button className="btn ps-0">
-                          Read More <GoArrowRight />
-                        </button>
+                        <p className="p-small">
+                          <span className="tags-wrapper">{blog.category}</span>
+                        </p>
+                          <h3 className="card-title mb-3">{blog.title}</h3>
+                          <p className="card-description mb-4">{blog.description}</p>
                       </div>
+                        <div>
+                          <button className="btn ps-0">
+                            Read More <GoArrowRight />
+                          </button>
+                        </div>
                     </div>
                   </div>
                 </div>

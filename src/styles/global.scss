@@ -23,6 +23,10 @@
             justify-content: space-between;
             align-items: center;
 
+            .logo-img {
+                width: 300px;
+            }
+
             // nav left
             .nav-left {
                 display: flex;
@@ -398,3 +402,5 @@
       }
     }
   }
+
+.mb-logo-img { width: 250px; }
